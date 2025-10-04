@@ -8,7 +8,6 @@ public class Romain {
 		this.force = force;
 	}
 	public String getNom() {
-		
 		return nom;
 	}	
 	public void parler(String texte) {	
@@ -16,7 +15,18 @@ public class Romain {
 	}
 	private String prendreParole() {			
 		return "Le romain " + nom + " : ";
-	}       
+	} 
+	public void recevoircoup(int force) {
+		this.force = this.force - force ;
+		if (this.force <1) {
+			parler("j abandonne");
+			
+		}
+		else {
+			parler("aiee");
+		}
+		
+	}
 }
 
 
