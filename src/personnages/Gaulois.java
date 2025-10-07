@@ -5,6 +5,7 @@ public class Gaulois {
 	private String nom;
 	private int force;
 	private  Integer effetPotion = 1;
+	private  Integer village ;
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
@@ -29,6 +30,7 @@ public class Gaulois {
 		effetPotion = forcepotion;
 		
 	}
+	
 }
 
 
