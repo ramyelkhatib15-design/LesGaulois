@@ -53,16 +53,16 @@ public class Village {
 		}
 		
 	public static void main(String[] args) {
-		Gaulois Abraracourcix  = new Gaulois("Abraracourcix ", 6,true,true);
+		Gaulois Abraracourcix  = new Gaulois("Abraracourcix ", 6);
 		Village village = new Village("Village des Irréductibles", 30, Abraracourcix);
-		Abraracourcix.setvillage("Village des Irréductibles");
-		Gaulois Asterix = new Gaulois("Asterix",8,true,false);
-		Gaulois obelix = new Gaulois("obelix", 25, true, false);
+		Abraracourcix.setvillage(village);
+		Gaulois Asterix = new Gaulois("Asterix",8);
+		Gaulois obelix = new Gaulois("obelix", 25);
 		village.ajoutervillageois(Asterix);
-		Asterix.setvillage("Village des Irréductibles");
+		Asterix.setvillage(village);
 		village.ajoutervillageois(obelix);
-		obelix.setvillage("Village des Irréductibles");
-		Gaulois doublepolemix = new Gaulois("doublepolemix",4 ,false, false);
+		obelix.setvillage(village);
+		Gaulois doublepolemix = new Gaulois("doublepolemix",4);
 		Abraracourcix.sepresenter();
 		Asterix.sepresenter();
 		doublepolemix.sepresenter();

@@ -1,7 +1,5 @@
 package personnages;
 
-import java.security.KeyStore.TrustedCertificateEntry;
-
 public class Gaulois {
 	
 	private String nom;
@@ -9,12 +7,12 @@ public class Gaulois {
 	private  Integer effetPotion = 1;
 	private  Boolean village ;
 	private Boolean chef ;
-	private String villagee;
-	public Gaulois(String nom, int force, Boolean village ,Boolean chef ) {
+	private Village villagee;
+	public Gaulois(String nom, int force ) {
 		this.nom = nom;
 		this.force = force;
-		this.village = village;
-		this.chef = chef;
+		this.village = false;
+		this.chef = false;
 	}
 	public String getNom() {
 		return nom;
@@ -36,21 +34,26 @@ public class Gaulois {
 		effetPotion = forcepotion;
 		
 	}
-	public void setvillage(String village) {
+	public void setvillage(Village village) {
 		this.villagee = village;
-	}
+		this.village = true;
+		if (villagee.getchef() == nom) {
+			this.chef = true;
+		}
+		else {
+			this.chef = false;
+		}
+		}
 	public void sepresenter() {
 		if (chef == true) {
-			System.out.println("bonjour je m apelle"+ getNom()+"je suis le chef les villages"+ villagee);
-			
-			
+			System.out.println("bonjour je m apelle "+ getNom()+" je suis le chef de   "+ villagee.getnom());
 		}
 		else if (village == true) {
-			System.out.println("bonjour je m apelle"+getNom()+"j habite le village "+villagee);
+			System.out.println("bonjour je m apelle "+getNom()+" j habite le "+villagee.getnom());
 			
 		}
 		else {
-			System.out.println("bonjour je m apelle"+ getNom()+ "je voyage de villages en villages");
+			System.out.println("bonjour je m apelle "+ getNom()+ " je voyage de villages en villages");
 		}
 		}
 }
